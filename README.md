@@ -11,7 +11,7 @@ Event: https://github.com/janisme/Eventplanning (branch: Json_version, Cloud-env
 
 ## Demo Video
 
-Enhance Microservices Implementation:
+### Enhance Microservices Implementation:
 
 Service 1:
 
@@ -25,17 +25,17 @@ Service 3:
 
 https://drive.google.com/file/d/1UBKM8q-d-KGX6Le8n_hdZM5XVeTU1_d-/view?usp=sharing
 
-Pagination:
+### Pagination:
 
 https://drive.google.com/file/d/1calgiUk1sKtbXTVqVMYUDkvX52B1R6F8/view?usp=sharing
 
 
-Events, Notifications, Pub/Sub:
+### Events, Notifications, Pub/Sub:
 
 https://drive.google.com/file/d/138tX-krsdwgdstcsbIqBEePtPKp00Tiq/view?usp=sharing
 
 
-Composition/Aggregators:
+### Composition/Aggregators:
 
 https://drive.google.com/file/d/1uyoRZi-G9nrPvrIJ1aF3ol15vqlkoHab/view
 
@@ -43,36 +43,36 @@ https://drive.google.com/file/d/1uyoRZi-G9nrPvrIJ1aF3ol15vqlkoHab/view
 
 
 
-API Gateway:
+### API Gateway:
 
 https://clipchamp.com/watch/i67q949oF6s
 
 https://github.com/wjh0706/eplanner_auth/tree/main/src/jwt_auth
 
-SSO:
+### SSO:
 
 https://drive.google.com/file/d/1mZWbhPx1HcbDhvK2CTSm3UceVWAyAg_y/view?usp=sharing
 
 
-External API:
+### External API:
 
 I am using AWS SES to send the verification link to an unverified user’s email to verify the ownership of the email. 
 
 https://drive.google.com/file/d/1bvYlcfwVL1fSUCb0ccd7alfvbmXrGmHJ/view?usp=sharing
 
-Middleware
+### Middleware
 
 https://drive.google.com/file/d/16Xq7U_zxlwX9WethF8JAXyUXE50-qkHp/view?usp=drive_link
 
-CI/CD
+### CI/CD
 
 https://drive.google.com/file/d/1juDPmvxfY1h1nibMUTfhHsDHb4SpduaJ/view?usp=sharing
 
-Infrastructure As Code
+### Infrastructure As Code
 
 https://clipchamp.com/watch/0LnxkgfpwFf
 
-GraphQL
+### GraphQL
 
 https://drive.google.com/file/d/16Xq7U_zxlwX9WethF8JAXyUXE50-qkHp/view?usp=drive_link
 
@@ -84,102 +84,75 @@ As students at Columbia University, we observed that many campus seminars and ev
 To address these issues, We developed this cloud-native application to streamline the management of events organized by domain organizers(Ex, Columbia computer science department to CS students). 
 Eplanner enables organizers to organize events, track participants, and acquire feedback efficiently. Moreover, participants can also have a clearer view of the events their domain organizer held with a quicker check-in process.
 
-##Personas and Roles: Potential Users and Roles in your service.
+## Personas and Roles: Potential Users and Roles in your service.
 
 There are two personas:
 
-User
+### User
 
 Event holder is the person who holds events. An event holder is a user who creates an event. The event holder can edit, delete, and mark complete the event as long as he/she is the event holder of this event. If the person is an Event holder, he/she can not be the participant in the specific event.
 
 Participant is the person who joins the event. A participant is a user who can enter any event for which he/she is not an event holder. The participant can register, cancel registration and check-in on the events he/she participates in.
 
-Admin
+### Admin
 
 An administrator can be the event holder or participant of a event(mentioned above). The administrator can also have the right to edit, delete, and mark complete the event even though he/she is not the event holder of this event. An administrator can also register, cancel registration and check-in on the events for other users.
 
 ## Key Features
 
-Authentication
+### Authentication
 
 This feature includes the following actions:
 
-Sign up using their domain email. After signup, the Eplanner will automatically create a user profile within the application. Also, verification of organization email is required.
-Log in/log in with their domain email.
-
-Forget and reset password.
-User Profile
-
+1. Sign up using their domain email. After signup, the Eplanner will automatically create a user profile within the application. Also, verification of organization email is required.
+2. Log in/log in with their domain email.
+3. Forget and reset password.
+### User Profile
 Each user would have their own profile to record the participation history and personal information. This feature includes the following actions:
 
-Change the user’s information.
+1. Change the user’s information.
+2. Change the user’s picture.
 
-Change the user’s picture.
-
-List of the events (past and upcoming events)Plan an event
+### Event
+List of the events (past and upcoming events) and Plan an event
 
 This feature includes the following actions:
 
-Create an Event.
-
-Delete an Event.
-
-Edit the details of the event.
-
-Mark the event as complete after the completion of the event. 
-
-Take participant
+1. Create an Event.
+2. Delete an Event.
+3. Edit the details of the event.
+4. Mark the event as complete after the completion of the event.
+5. Take participant
 
 A user who is not an organizer of the event can participate in the event, and this feature includes the following actions:
-
-Register for an event.
-
-Cancel the registration for an event.
-
-Check-in on the event. When a user takes part in the event, the user can check in and take an attendance record.
+1. Register for an event.
+2. Cancel the registration for an event.
+3. Check-in on the event. When a user takes part in the event, the user can check in and take an attendance record.
 
 ## Resource Paths
 
-Authentication
+### Authentication
+1. Signin: POST api/auth/signin
+2. Signout: POST api/auth/signout
+3. Signup: POST api/auth/signup
+4. Get All Users: GET api/auth/all/{page}{pageSize}
+5. Get Current User: GET api/auth/user
+6. Forget Password: PUT api/auth/forgetpwd
+7. Reset Password: PUT api/auth/resetpwd/{token}
+8. Verification: PUT api/auth/verify/{token}
+9. Send Verification: PUT api/auth/snedverification
+10. Delete Account: PUT api/auth/delete
 
-Signin: POST api/auth/signin
+### User Profile
 
-Signout: POST api/auth/signout
+1. Create Profile: POST api/user/create
+2. Get User Info: GET api/user/{userid}/info
+3. Change Info: PUT api/user/{userid}/info
+4. Change Photo: PUT api/user/{userid}/photo
 
-Signup: POST api/auth/signup
-
-Get All Users: GET api/auth/all/{page}{pageSize}
-
-Get Current User: GET api/auth/user
-
-Forget Password: PUT api/auth/forgetpwd
-
-Reset Password: PUT api/auth/resetpwd/{token}
-
-Verification: PUT api/auth/verify/{token}
-
-Send Verification: PUT api/auth/snedverification
-
-Delete Account: PUT api/auth/delete
-
-User Profile
-
-Create Profile: POST api/user/create
-
-Get User Info: GET api/user/{userid}/info
-
-Change Info: PUT api/user/{userid}/info
-
-Change Photo: PUT api/user/{userid}/photo
-
-Event
-
-Get All Event: GET events/
-
-Create: POST events/create/
-
-Delete: DELETE events/view/<event_id>/delete/
-
-Get Event Details: GET events//view/<event_id>/
-
-Edit: PUT events/view/<event_id>/edit/
+### Event
+1. Get All Event: GET events/
+2. Create: POST events/create/
+3. Delete: DELETE events/view/<event_id>/delete/
+4. Get Event Details: GET events//view/<event_id>/
+5. Edit: PUT events/view/<event_id>/edit/
