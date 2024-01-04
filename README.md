@@ -1,4 +1,4 @@
-# eplanner
+# ePlanner
 ## CodeBase
 Front End: https://github.com/wjh0706/eplanner_frontend
 
