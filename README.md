@@ -73,8 +73,6 @@ https://clipchamp.com/watch/0LnxkgfpwFf
 
 GraphQL
 
-Implement a simple example of GraphQL using one of the functionalities of your application.
-
 https://drive.google.com/file/d/16Xq7U_zxlwX9WethF8JAXyUXE50-qkHp/view?usp=drive_link
 
 
