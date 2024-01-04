@@ -7,7 +7,7 @@ Auth: https://github.com/wjh0706/eplanner_auth
 
 User: https://github.com/wjh0706/eplanner_user
 
-Event: https://github.com/janisme/Eventplanning (branch: Json_version, Cloud-env)
+Event: https://github.com/janisme/Eventplanning
 
 ## Demo Video
 
