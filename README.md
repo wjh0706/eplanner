@@ -1,4 +1,5 @@
 # ePlanner
+Please note this is a combined codebase for all the repos listed below.
 ## CodeBase
 Front End: https://github.com/wjh0706/eplanner_frontend
 
